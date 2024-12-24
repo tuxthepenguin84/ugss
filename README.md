@@ -163,6 +163,11 @@ _If you won't be building your server as a VM skip this section_
   sudo apt install -y vim
   ```
 
+* Install QEMU Agent (Optional) - Only if your server is a Proxmox VM
+  ```
+  sudo apt install -y qemu-guest-agent
+  ```
+
 ### Configure Additional Drive
 
 If you configured a secondary drive to store games
