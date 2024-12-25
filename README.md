@@ -30,7 +30,7 @@
 
 
 <!-- TABLE OF CONTENTS -->
-<details open>
+<details>
   <summary>Table of Contents</summary>
   <ol>
     <li>
@@ -43,7 +43,23 @@
         <li><a href="#software">Software</a></li>
       </ul>
     </li>
-    <li><a href="#build--deploy">Build & Deploy</a></li>
+    <li><a href="#deploy-server">Deploy Server</a></li>
+      <ul>
+        <li><a href="#vm-configuration-optional">VM Configuration (Optional)</a></li>
+        <li><a href="#install-os">Install OS</a></li>
+        <li><a href="#configure-os">Configure OS</a></li>
+        <li><a href="#configure-additional-drive">Configure Additional Drive</a></li>
+        <li><a href="#configure-gpu">Configure GPU</a></li>
+      </ul>
+    <li><a href="#software">Software</a></li>
+      <ul>
+        <li><a href="#install-steam">Install Steam</a></li>
+        <li><a href="#install-lutris">Install Lutris</a></li>
+        <li><a href="#install-sunshine">Install Sunshine</a></li>
+        <li><a href="#configure-sunshine">Configure Sunshine</a></li>
+        <li><a href="#setup-moonlight">Setup Moonlight</a></li>
+        <li><a href="#moondeck">MoonDeck</a></li>
+      </ul>
     <li><a href="#other-considerations">Other Considerations</a></li>
     <li><a href="#roadmap">Roadmap</a></li>
     <li><a href="#contributing">Contributing</a></li>
@@ -105,7 +121,7 @@ Once complete you should be able to stream games to just about any device:
 
 
 <!-- BUILD EXAMPLES -->
-## Build & Deploy
+## Deploy Server
 
 ### VM Configuration (Optional)
 
@@ -244,19 +260,23 @@ _Coming soon..._
 1. Verify drivers are installed correctly: `nvidia-smi`
 1. Reboot
 
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## Software
+
 ### Install Steam
 
 1. Steam requires curl to be installed
    ```
    sudo apt install -y curl
    ```
-1. Download the steam Debian package
+1. Download the Steam Debian package
    ```
    wget https://cdn.fastly.steamstatic.com/client/installer/steam.deb
    ```
 1. Install Steam
    ```
-   sudo dpkg -i steam.deb
+   sudo apt install -y -f ./steam.deb
    ```
 1. Launch Steam
    ```
@@ -265,6 +285,17 @@ _Coming soon..._
 1. Configure Steam to auto start on login
 1. Under _Storage_ add /mnt/games mount point and set it as the default
 1. Under _Compatibility_ enable `Enable Steam Play for all other titles`
+
+### Install Lutris
+
+1. Download the Lutris Debian package
+   ```
+   wget https://github.com/lutris/lutris/releases/download/v0.5.18/lutris_0.5.18_all.deb
+   ```
+1. Install Lutris
+   ```
+   sudo apt install -y -f ./lutris_0.5.18_all.deb
+   ```
 
 ### Install Sunshine
 
@@ -357,8 +388,6 @@ Here are my applications I have setup.
 
 My setup will differ from yours but run `xrandr` (Assuming you are using X11) to get an idea of what displays you have and what resolutions they support. In my case, DP-1 is DisplayPort 1 which is a 1080p 60hz physical monitor, and DP-2 is DisplayPort 2 which is a high refresh rate DisplayPort Emulator.
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
 ### Setup Moonlight
 
 This will vary across devices but you will install the Moonlight client and then connect to the Sunshine server via hostname or IP address. A PIN is required to connect the first time.
@@ -373,15 +402,19 @@ There are two components:
 * [MoonDeck](https://github.com/FrogTheFrog/moondeck) plugin which you install through [Ducky](https://github.com/SteamDeckHomebrew/decky-loader) on your Steam Deck
 * [MoonDeck Buddy](https://github.com/FrogTheFrog/moondeck-buddy) which you install on your streaming server and integrates with Sunshine. [Install Instructions](https://github.com/FrogTheFrog/moondeck-buddy/wiki/Buddy-installation-guide#linux-other-appimage)
 
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
 
 <!-- OTHER CONSIDERATIONS -->
 ## Other Considerations
 
 ### Steam Remote Play
-My experience with Steam Remote Play is it has lower quality with lag issues.
+My experience with Steam Remote Play is it has lower quality with lag issues, assuming you can launch the game.
 
 ### Parsec
 More of a commercial application that has a free and paid tier, in my limited testing it works connecting from a Linux client to a Windows PC with good performance.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
 <!-- ROADMAP -->
