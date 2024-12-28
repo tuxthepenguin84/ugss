@@ -363,7 +363,7 @@ Here are my applications I have setup.
 * MoonDeckStream - This is configured to match the Steam Deck resolution and refresh rate.
    * Do Command
       ```
-      xrandr --output DP-2 --mode 1280x720 --rate 60 --output DP-1 --off
+      xrandr --output DP-2 --mode 1280x800 --rate 60 --output DP-1 --off
       ```
    * Undo Command
       ```
