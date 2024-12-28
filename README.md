@@ -55,7 +55,7 @@
       <ul>
         <li><a href="#steam">Steam</a></li>
         <li><a href="#lutris">Lutris</a></li>
-        <li><a href="#emudec">EmuDeck</a></li>
+        <li><a href="#emudeck">EmuDeck</a></li>
         <li><a href="#sunshine">Sunshine</a></li>
         <li><a href="#moonlight">Moonlight</a></li>
         <li><a href="#moondeck">MoonDeck</a></li>
@@ -75,7 +75,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-This is a comprehensive guide on how to build the ultimate game streaming server. I got the idea for this when I tried using [Bazzite](https://github.com/ublue-os/bazzite) but ran into issues with Wayland on Nvidia and Fedora Atomic Desktops. Once I figured out the major components of what all was needed I decided I'd try to roll my own configuration on Ubuntu.
+This is a comprehensive guide on how to build the ultimate game streaming server. With a dedicated game streaming server all the processing and rendering is centralized and then streamed to any type of device.
 
 Once complete you should be able to stream games to just about any device:
 
@@ -93,6 +93,12 @@ Once complete you should be able to stream games to just about any device:
   * PS Vita
   * Xbox
   * LG webOS TVs
+
+[_But why?..._](https://www.youtube.com/watch?v=shbxUe-S2V8&pp=ygUUd2h5IHdoeSB3aHkgcHJlYWNoZXI%3D)
+
+I got the idea for this when I tried using [Bazzite](https://github.com/ublue-os/bazzite) but ran into issues with Wayland on Nvidia and Fedora Atomic Desktops. Once I figured out the major components of what all was needed I decided I'd try to roll my own configuration on Ubuntu.
+
+### Screenshots
 
 [![Product Screen Shot 1][product-screenshot-1]](https://github.com/tuxthepenguin84/ugss/blob/master/images/screenshot1.png)
 [![Product Screen Shot 2][product-screenshot-2]](https://github.com/tuxthepenguin84/ugss/blob/master/images/screenshot2.png)
@@ -164,7 +170,7 @@ _If you won't be building your server as a VM skip this section_
 
 * Install Additional Packages
   ```
-  sudo apt install -y dkms git openssh-server vim
+  sudo apt install -y build-essential curl dkms git openssh-server vim
   ```
 
 * Use X11 for Nvidia
@@ -184,7 +190,7 @@ _If you won't be building your server as a VM skip this section_
   sudo systemctl enable ssh
   ```
 
-* Install QEMU Agent (Optional) - Only if your server is a Proxmox VM
+* Install QEMU Agent (Optional) - Only if your streaming server is a Proxmox VM
   ```
   sudo apt install -y qemu-guest-agent
   ```
@@ -247,7 +253,6 @@ _Coming soon..._
 
 #### Nvidia
 
-1.  Install build tools: `sudo apt install -y build-essential`
 1.  Grab the latest drivers for your GPU [Nvidia 3060 - 565.77](https://us.download.nvidia.com/XFree86/Linux-x86_64/565.77/NVIDIA-Linux-x86_64-565.77.run) latest at the time of writing this
    * `wget https://us.download.nvidia.com/XFree86/Linux-x86_64/565.77/NVIDIA-Linux-x86_64-565.77.run`
 1. `chmod +x NVIDIA-Linux-x86_64-565.77.run`
@@ -271,10 +276,6 @@ _Coming soon..._
 
 ### Steam
 
-1. Steam requires curl to be installed
-   ```
-   sudo apt install -y curl
-   ```
 1. Download the Steam Debian package
    ```
    wget https://cdn.fastly.steamstatic.com/client/installer/steam.deb
@@ -423,7 +424,7 @@ Here are my applications I have setup.
       setsid steam steam://open/bigpicture
       ```
 
-My setup will differ from yours but run `xrandr` (Assuming you are using X11) to get an idea of what displays you have and what resolutions they support. In my case, DP-1 is DisplayPort 1 which is a 1080p 60hz physical monitor, and DP-2 is DisplayPort 2 which is a high refresh rate DisplayPort Emulator.
+My setup will differ from yours but run `xrandr` (Assuming you are using X11 as xrandr does not work with Wayland) to get an idea of what displays you have and what resolutions they support. In my case, DP-1 is DisplayPort 1 which is a 1080p 60hz physical monitor, and DP-2 is DisplayPort 2 which is a high refresh rate DisplayPort Emulator.
 
 ### Moonlight
 [Moonlight](https://moonlight-stream.org/) GameStream client for PCs (Windows, Mac, Linux, and Steam Link)
