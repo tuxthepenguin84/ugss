@@ -75,10 +75,6 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Product Screen Shot 1][product-screenshot-1]](https://github.com/tuxthepenguin84/ugss/blob/master/images/screenshot1.png)
-[![Product Screen Shot 2][product-screenshot-2]](https://github.com/tuxthepenguin84/ugss/blob/master/images/screenshot2.png)
-[![Product Screen Shot 3][product-screenshot-3]](https://github.com/tuxthepenguin84/ugss/blob/master/images/screenshot3.png)
-
 This is a comprehensive guide on how to build the ultimate game streaming server. I got the idea for this when I tried using [Bazzite](https://github.com/ublue-os/bazzite) but ran into issues with Wayland on Nvidia and Fedora Atomic Desktops. Once I figured out the major components of what all was needed I decided I'd try to roll my own configuration on Ubuntu.
 
 Once complete you should be able to stream games to just about any device:
@@ -97,6 +93,10 @@ Once complete you should be able to stream games to just about any device:
   * PS Vita
   * Xbox
   * LG webOS TVs
+
+[![Product Screen Shot 1][product-screenshot-1]](https://github.com/tuxthepenguin84/ugss/blob/master/images/screenshot1.png)
+[![Product Screen Shot 2][product-screenshot-2]](https://github.com/tuxthepenguin84/ugss/blob/master/images/screenshot2.png)
+[![Product Screen Shot 3][product-screenshot-3]](https://github.com/tuxthepenguin84/ugss/blob/master/images/screenshot3.png)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
