@@ -302,9 +302,9 @@ _Coming soon..._
 
 ### Install Sunshine
 
-1. Grab the latest version of [Sunshine v2024.1223.230344](https://github.com/LizardByte/Sunshine/releases/download/v2024.1223.230344/sunshine-ubuntu-24.04-amd64.deb)
+1. Grab the latest version of [Sunshine v2024.1227.43619](https://github.com/LizardByte/Sunshine/releases/download/v2024.1227.43619/sunshine-ubuntu-24.04-amd64.deb)
    ```
-   wget https://github.com/LizardByte/Sunshine/releases/download/v2024.1223.230344/sunshine-ubuntu-24.04-amd64.deb
+   wget https://github.com/LizardByte/Sunshine/releases/download/v2024.1227.43619/sunshine-ubuntu-24.04-amd64.deb
    ```
 1. Install Sunshine
    ```
