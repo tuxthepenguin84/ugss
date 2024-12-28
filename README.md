@@ -59,6 +59,7 @@
         <li><a href="#configure-sunshine">Configure Sunshine</a></li>
         <li><a href="#setup-moonlight">Setup Moonlight</a></li>
         <li><a href="#moondeck">MoonDeck</a></li>
+        <li><a href="#xone-optional">xone</a></li>
       </ul>
     <li><a href="#other-considerations">Other Considerations</a></li>
     <li><a href="#roadmap">Roadmap</a></li>
@@ -109,6 +110,7 @@ Once complete you should be able to stream games to just about any device:
     * For example, if you only care about 1080p at 60hz just about every monitor will do that or you can buy a generic [DisplayPort Emulator](https://www.amazon.com/gp/product/B08RC9V75B/ref=ppx_yo_dt_b_search_asin_title?ie=UTF8&th=1) or [HDMI Emulator](https://www.amazon.com/gp/product/B08RCH47KL/ref=ppx_yo_dt_b_search_asin_title?ie=UTF8&th=1)
     * If you want a high refresh rate for gaming, for example 1440p at 144hz or 1080p at 240hz, you will need a [high refresh rate DisplayPort Emulator](https://www.amazon.com/gp/product/B0C2CNYCHX/ref=ppx_yo_dt_b_search_asin_title?ie=UTF8&th=1) or high refresh rate monitor. Be sure to verify the emulator supports the resolution and refresh rate you want.
 * Any device listed in the About section above that you can stream to
+* Optional: Keyboard, Mouse, Xbox Controller
 
 ### Software
 
@@ -156,6 +158,11 @@ _If you won't be building your server as a VM skip this section_
 
 ### Configure OS
 
+* Install Additional Packages
+  ```
+  sudo apt install -y dkms git openssh-server vim
+  ```
+
 * Use X11 for Nvidia
    * If you are using an Nvidia GPU you should use X11 rather than Wayland display server, if you are unsure of what you are currently running `echo $XDG_SESSION_TYPE`. To switch, logoff and click the gear in the bottom right and select `Ubuntu on Xorg`. `nvfbc`, NVIDIA Frame Buffer Capture allows you to capture direct to GPU memory, significantly improving performance. At the time of this writing `nvfbc` does not work on Wayland.
 
@@ -166,17 +173,11 @@ _If you won't be building your server as a VM skip this section_
   * Disable any type of screen saver, suspend, or screen blanking. `Settings => Power => Screen Blanking` to `Never`
 
 * Do Not Disturb Mode
-  * I also enable Do Not Disturb in the notifications bar to disable any popups.
+  * Enable Do Not Disturb in the notifications bar to disable any popups.
 
-* Install & Enable SSH
+* Enable SSH
   ```
-  sudo apt install -y openssh-server
   sudo systemctl enable ssh
-  ```
-
-* Install VIM
-  ```
-  sudo apt install -y vim
   ```
 
 * Install QEMU Agent (Optional) - Only if your server is a Proxmox VM
@@ -401,6 +402,16 @@ There are two components:
 
 * [MoonDeck](https://github.com/FrogTheFrog/moondeck) plugin which you install through [Ducky](https://github.com/SteamDeckHomebrew/decky-loader) on your Steam Deck
 * [MoonDeck Buddy](https://github.com/FrogTheFrog/moondeck-buddy) which you install on your streaming server and integrates with Sunshine. [Install Instructions](https://github.com/FrogTheFrog/moondeck-buddy/wiki/Buddy-installation-guide#linux-other-appimage)
+
+### xone (Optional)
+[xone](https://github.com/medusalix/xone) is a Linux kernel driver for Xbox One and Xbox Series X|S accessories. Useful if you have an Xbox controller you want to hook up locally to your streaming server.
+```
+mkdir ~/git
+cd git
+git clone https://github.com/medusalix/xone
+sudo ./install.sh
+sudo xone-get-firmware.sh --skip-disclaimer
+```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
