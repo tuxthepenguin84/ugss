@@ -51,7 +51,7 @@
         <li><a href="#configure-additional-drive">Configure Additional Drive</a></li>
         <li><a href="#configure-gpu">Configure GPU</a></li>
       </ul>
-    <li><a href="#software">Software</a></li>
+    <li><a href="#additional-software">Additional Software</a></li>
       <ul>
         <li><a href="#steam">Steam</a></li>
         <li><a href="#lutris">Lutris</a></li>
@@ -120,7 +120,8 @@ Once complete you should be able to stream games to just about any device:
 * [Ubuntu 24.04 Desktop](https://ubuntu.com/download/desktop) - Desktop OS
 * [Sunshine](https://github.com/LizardByte/Sunshine/) - Backend streaming service
 * [Moonlight](https://moonlight-stream.org/) - Host client to connect to Sunshine
-* [MoonDeck](https://github.com/FrogTheFrog/moondeck) - Optional, A plugin that makes it easier to manage your gamestream sessions from the Steam Deck
+
+All other <a href="#additional-software">additional software listed below</a> is optional but I imagine most people would be using Steam at a minimum.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -266,7 +267,7 @@ _Coming soon..._
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-## Software
+## Additional Software
 
 ### Steam
 
