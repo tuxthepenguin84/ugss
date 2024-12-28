@@ -30,7 +30,7 @@
 
 
 <!-- TABLE OF CONTENTS -->
-<details>
+<details open>
   <summary>Table of Contents</summary>
   <ol>
     <li>
@@ -45,7 +45,7 @@
     </li>
     <li><a href="#deploy-server">Deploy Server</a></li>
       <ul>
-        <li><a href="#vm-configuration-optional">VM Configuration (Optional)</a></li>
+        <li><a href="#vm-configuration-optional">VM Configuration</a></li>
         <li><a href="#install-os">Install OS</a></li>
         <li><a href="#configure-os">Configure OS</a></li>
         <li><a href="#configure-additional-drive">Configure Additional Drive</a></li>
@@ -53,14 +53,15 @@
       </ul>
     <li><a href="#software">Software</a></li>
       <ul>
-        <li><a href="#install-steam">Install Steam</a></li>
-        <li><a href="#install-lutris">Install Lutris</a></li>
-        <li><a href="#install-sunshine">Install Sunshine</a></li>
-        <li><a href="#configure-sunshine">Configure Sunshine</a></li>
-        <li><a href="#setup-moonlight">Setup Moonlight</a></li>
+        <li><a href="#steam">Steam</a></li>
+        <li><a href="#lutris">Lutris</a></li>
+        <li><a href="#emudec">EmuDeck</a></li>
+        <li><a href="#sunshine">Sunshine</a></li>
+        <li><a href="#moonlight">Moonlight</a></li>
         <li><a href="#moondeck">MoonDeck</a></li>
-        <li><a href="#xone-optional">xone</a></li>
+        <li><a href="#xone">xone</a></li>
       </ul>
+    <li><a href="#additional-resources">Additional Resources</a></li>
     <li><a href="#other-considerations">Other Considerations</a></li>
     <li><a href="#roadmap">Roadmap</a></li>
     <li><a href="#contributing">Contributing</a></li>
@@ -127,7 +128,7 @@ Once complete you should be able to stream games to just about any device:
 <!-- BUILD EXAMPLES -->
 ## Deploy Server
 
-### VM Configuration (Optional)
+### VM Configuration
 
 _If you won't be building your server as a VM skip this section_
 
@@ -267,7 +268,7 @@ _Coming soon..._
 
 ## Software
 
-### Install Steam
+### Steam
 
 1. Steam requires curl to be installed
    ```
@@ -289,7 +290,7 @@ _Coming soon..._
 1. Under _Storage_ add /mnt/games mount point and set it as the default
 1. Under _Compatibility_ enable `Enable Steam Play for all other titles`
 
-### Install Lutris
+### Lutris
 
 1. Download the Lutris Debian package
    ```
@@ -300,7 +301,25 @@ _Coming soon..._
    sudo apt install -y -f ./lutris_0.5.18_all.deb
    ```
 
-### Install Sunshine
+### EmuDeck
+
+1. Download prereqs
+   ```
+   sudo apt install -y bash flatpak git jq libfuse2 rsync unzip zenity
+   ```
+1. Install EmuDeck
+   ```
+   curl -L https://raw.githubusercontent.com/dragoonDorise/EmuDeck/main/install.sh | bash
+   ```
+1. Walk through initial setup
+1. Copy BIOS
+1. Copy ROMs
+1. Add Emulation Station to Steam
+   1. In Steam, go to `Games` menu
+   1. `Add a Non-Steam Game to My Library...`
+   1. Select `ES-DE AppImage`
+
+### Sunshine
 
 1. Grab the latest version of [Sunshine v2024.1227.43619](https://github.com/LizardByte/Sunshine/releases/download/v2024.1227.43619/sunshine-ubuntu-24.04-amd64.deb)
    ```
@@ -340,7 +359,7 @@ _Coming soon..._
    ```
 1. `reboot`
 
-### Configure Sunshine
+#### Configure Sunshine
 
 The default configs will work for most people but adjust as necessary
 
@@ -391,7 +410,7 @@ Here are my applications I have setup.
 
 My setup will differ from yours but run `xrandr` (Assuming you are using X11) to get an idea of what displays you have and what resolutions they support. In my case, DP-1 is DisplayPort 1 which is a 1080p 60hz physical monitor, and DP-2 is DisplayPort 2 which is a high refresh rate DisplayPort Emulator.
 
-### Setup Moonlight
+### Moonlight
 
 This will vary across devices but you will install the Moonlight client and then connect to the Sunshine server via hostname or IP address. A PIN is required to connect the first time.
 
@@ -405,7 +424,7 @@ There are two components:
 * [MoonDeck](https://github.com/FrogTheFrog/moondeck) plugin which you install through [Ducky](https://github.com/SteamDeckHomebrew/decky-loader) on your Steam Deck
 * [MoonDeck Buddy](https://github.com/FrogTheFrog/moondeck-buddy) which you install on your streaming server and integrates with Sunshine. [Install Instructions](https://github.com/FrogTheFrog/moondeck-buddy/wiki/Buddy-installation-guide#linux-other-appimage)
 
-### xone (Optional)
+### xone
 [xone](https://github.com/medusalix/xone) is a Linux kernel driver for Xbox One and Xbox Series X|S accessories. Useful if you have an Xbox controller you want to hook up locally to your streaming server.
 ```
 mkdir ~/git
@@ -414,6 +433,15 @@ git clone https://github.com/medusalix/xone
 sudo ./install.sh
 sudo xone-get-firmware.sh --skip-disclaimer
 ```
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+
+<!-- ADDITIONAL RESOURCES -->
+## Additional Resources
+
+### [Awesome Sunshine](https://github.com/LizardByte/awesome-sunshine)
+A collection of awesome Sunshine scripts, tools, guides and companion software.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
