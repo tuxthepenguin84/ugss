@@ -291,6 +291,17 @@ _Coming soon..._
 1. Under _Compatibility_ enable `Enable Steam Play for all other titles`
 
 ### Lutris
+[Lutris](https://lutris.net/) is an open gaming platform for Linux. Lutris helps you install and play video games from all eras and from most gaming systems.
+
+[Wine](https://www.winehq.org/) must be installed before you install Lutris
+```
+sudo dpkg --add-architecture i386
+sudo mkdir -pm755 /etc/apt/keyrings
+wget -O - https://dl.winehq.org/wine-builds/winehq.key | sudo gpg --dearmor -o /etc/apt/keyrings/winehq-archive.key -
+sudo wget -NP /etc/apt/sources.list.d/ https://dl.winehq.org/wine-builds/ubuntu/dists/noble/winehq-noble.sources
+sudo apt update
+sudo apt install --install-recommends wine-stable
+```
 
 1. Download the Lutris Debian package
    ```
@@ -302,6 +313,7 @@ _Coming soon..._
    ```
 
 ### EmuDeck
+[EmuDeck](https://emudeck.github.io/) is a collection of scripts that allows you to autoconfigure your Steam Deck (works on Linux too), it creates your roms directory structure and downloads all of the needed Emulators for you along with the best configurations for each of them. EmuDeck works great with Steam Rom Manager or with EmulationStation DE.
 
 1. Download prereqs
    ```
@@ -318,8 +330,10 @@ _Coming soon..._
    1. In Steam, go to `Games` menu
    1. `Add a Non-Steam Game to My Library...`
    1. Select `ES-DE AppImage`
+   1. Rename the application in Steam to `EmulationStation DE`
 
 ### Sunshine
+[Sunshine](https://github.com/LizardByte/Sunshine) Self-hosted game stream host for Moonlight.
 
 1. Grab the latest version of [Sunshine v2024.1227.43619](https://github.com/LizardByte/Sunshine/releases/download/v2024.1227.43619/sunshine-ubuntu-24.04-amd64.deb)
    ```
@@ -411,13 +425,12 @@ Here are my applications I have setup.
 My setup will differ from yours but run `xrandr` (Assuming you are using X11) to get an idea of what displays you have and what resolutions they support. In my case, DP-1 is DisplayPort 1 which is a 1080p 60hz physical monitor, and DP-2 is DisplayPort 2 which is a high refresh rate DisplayPort Emulator.
 
 ### Moonlight
-
-This will vary across devices but you will install the Moonlight client and then connect to the Sunshine server via hostname or IP address. A PIN is required to connect the first time.
+[Moonlight](https://moonlight-stream.org/) GameStream client for PCs (Windows, Mac, Linux, and Steam Link)
 
 [Moonlight Setup Guide](https://github.com/moonlight-stream/moonlight-docs/wiki/Setup-Guide)
 
 ### MoonDeck
-MoonDeck is a plugin that makes it easier to manage your gamestream sessions from the Steam Deck and integrates with Sunshine. If you are wanting to stream games to your Steam Deck I highly recommend using this plugin.
+[MoonDeck](https://github.com/FrogTheFrog/moondeck) is a plugin that makes it easier to manage your gamestream sessions from the Steam Deck and integrates with Sunshine. If you are wanting to stream games to your Steam Deck I highly recommend using this plugin.
 
 There are two components:
 
