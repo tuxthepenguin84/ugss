@@ -63,6 +63,7 @@
         <li><a href="#gamemode">GameMode</a></li>
         <li><a href="#mangohud">MangoHud</a></li>
         <li><a href="#goverlay">Goverlay</a></li>
+        <li><a href="#protonup-qt">ProtonUp-QT</a></li>
       </ul>
     <li><a href="#additional-resources">Additional Resources</a></li>
     <li><a href="#other-considerations">Other Considerations</a></li>
@@ -534,6 +535,20 @@ sudo xone-get-firmware.sh --skip-disclaimer
    ```
    goverlay
    ```
+
+### ProtonUp-QT
+[ProtonUp-QT](https://github.com/DavidoTek/ProtonUp-Qt) install and manage GE-Proton, Luxtorpeda & more for Steam and Wine-GE & more for Lutris with this graphical user interface.
+1. Download ProtonUp-QT
+   ```
+   mkdir ~/ProtonUp-QT
+   wget -O ~/ProtonUp-QT/ProtonUp-QT.AppImage https://github.com/DavidoTek/ProtonUp-Qt/releases/download/v2.10.2/ProtonUp-Qt-2.10.2-x86_64.AppImage
+   chmod +x ~/ProtonUp-QT/ProtonUp-QT.AppImage
+   ```
+1. Run ProtonUp-QT
+   ```
+   ~/ProtonUp-QT/ProtonUp-QT.AppImage
+   ```
+1. From here you can add various compatibility tools such as GE-Proton for Steam
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
