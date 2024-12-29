@@ -53,11 +53,11 @@
       </ul>
     <li><a href="#additional-software">Additional Software</a></li>
       <ul>
+        <li><a href="#sunshine">Sunshine</a></li>
+        <li><a href="#moonlight">Moonlight</a></li>
         <li><a href="#steam">Steam</a></li>
         <li><a href="#lutris">Lutris</a></li>
         <li><a href="#emudeck">EmuDeck</a></li>
-        <li><a href="#sunshine">Sunshine</a></li>
-        <li><a href="#moonlight">Moonlight</a></li>
         <li><a href="#moondeck">MoonDeck</a></li>
         <li><a href="#xone">xone</a></li>
       </ul>
@@ -118,7 +118,7 @@ I got the idea for this when I tried using [Bazzite](https://github.com/ublue-os
     * This will need to be plugged into your GPU and what you select here will determine the maximum resolution and refresh rate you can stream games at
     * For example, if you only care about 1080p at 60hz just about every monitor will do that or you can buy a generic [DisplayPort Emulator](https://www.amazon.com/gp/product/B08RC9V75B/ref=ppx_yo_dt_b_search_asin_title?ie=UTF8&th=1) or [HDMI Emulator](https://www.amazon.com/gp/product/B08RCH47KL/ref=ppx_yo_dt_b_search_asin_title?ie=UTF8&th=1)
     * If you want a high refresh rate for gaming, for example 1440p at 144hz or 1080p at 240hz, you will need a [high refresh rate DisplayPort Emulator](https://www.amazon.com/gp/product/B0C2CNYCHX/ref=ppx_yo_dt_b_search_asin_title?ie=UTF8&th=1) or high refresh rate monitor. Be sure to verify the emulator supports the resolution and refresh rate you want.
-* Any device listed in the About section above that you can stream to
+* Any device listed in the About section above that you can stream your games to
 * Optional: Keyboard, Mouse, Xbox Controller
 
 ### Software
@@ -189,6 +189,10 @@ _If you won't be building your server as a VM skip this section_
   ```
   sudo systemctl enable ssh
   ```
+* Install latest updates
+  ```
+  sudo apt update && sudo apt upgrade -y && sudo apt autoremove -y && sudo apt clean
+  ```
 
 * Install QEMU Agent (Optional) - Only if your streaming server is a Proxmox VM
   ```
@@ -253,10 +257,12 @@ _Coming soon..._
 
 #### Nvidia
 
-1.  Grab the latest drivers for your GPU [Nvidia 3060 - 565.77](https://us.download.nvidia.com/XFree86/Linux-x86_64/565.77/NVIDIA-Linux-x86_64-565.77.run) latest at the time of writing this
-   * `wget https://us.download.nvidia.com/XFree86/Linux-x86_64/565.77/NVIDIA-Linux-x86_64-565.77.run`
-1. `chmod +x NVIDIA-Linux-x86_64-565.77.run`
-1. `sudo ./NVIDIA-Linux-x86_64-565.77.run`
+Grab the latest drivers [Nvidia 3060 - 565.77](https://us.download.nvidia.com/XFree86/Linux-x86_64/565.77/NVIDIA-Linux-x86_64-565.77.run) latest at the time of writing this
+```
+wget https://us.download.nvidia.com/XFree86/Linux-x86_64/565.77/NVIDIA-Linux-x86_64-565.77.run
+chmod +x NVIDIA-Linux-x86_64-565.77.run
+sudo ./NVIDIA-Linux-x86_64-565.77.run
+```
 1. Multiple kernel module types are available for this system. Which would you like to use? `MIT/GPL`
 1. An alternate method of installing the NVIDIA driver was detected. `Continue installation`
 1. The Nouveau kernel driver is currently in use by your system.  This driver is incompatible with the NVIDIA driver, and must be disabled before proceeding.
@@ -273,66 +279,6 @@ _Coming soon..._
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## Additional Software
-
-### Steam
-
-1. Download the Steam Debian package
-   ```
-   wget https://cdn.fastly.steamstatic.com/client/installer/steam.deb
-   ```
-1. Install Steam
-   ```
-   sudo apt install -y -f ./steam.deb
-   ```
-1. Launch Steam
-   ```
-   steam
-   ```
-1. Configure Steam to auto start on login
-1. Under _Storage_ add /mnt/games mount point and set it as the default
-1. Under _Compatibility_ enable `Enable Steam Play for all other titles`
-
-### Lutris
-[Lutris](https://lutris.net/) is an open gaming platform for Linux. Lutris helps you install and play video games from all eras and from most gaming systems.
-
-[Wine](https://www.winehq.org/) must be installed before you install Lutris
-```
-sudo dpkg --add-architecture i386
-sudo mkdir -pm755 /etc/apt/keyrings
-wget -O - https://dl.winehq.org/wine-builds/winehq.key | sudo gpg --dearmor -o /etc/apt/keyrings/winehq-archive.key -
-sudo wget -NP /etc/apt/sources.list.d/ https://dl.winehq.org/wine-builds/ubuntu/dists/noble/winehq-noble.sources
-sudo apt update
-sudo apt install --install-recommends wine-stable
-```
-
-1. Download the Lutris Debian package
-   ```
-   wget https://github.com/lutris/lutris/releases/download/v0.5.18/lutris_0.5.18_all.deb
-   ```
-1. Install Lutris
-   ```
-   sudo apt install -y -f ./lutris_0.5.18_all.deb
-   ```
-
-### EmuDeck
-[EmuDeck](https://emudeck.github.io/) is a collection of scripts that allows you to autoconfigure your Steam Deck (works on Linux too), it creates your roms directory structure and downloads all of the needed Emulators for you along with the best configurations for each of them. EmuDeck works great with Steam Rom Manager or with EmulationStation DE.
-
-1. Download prereqs
-   ```
-   sudo apt install -y bash flatpak git jq libfuse2 rsync unzip zenity
-   ```
-1. Install EmuDeck
-   ```
-   curl -L https://raw.githubusercontent.com/dragoonDorise/EmuDeck/main/install.sh | bash
-   ```
-1. Walk through initial setup
-1. Copy BIOS
-1. Copy ROMs
-1. Add Emulation Station to Steam
-   1. In Steam, go to `Games` menu
-   1. `Add a Non-Steam Game to My Library...`
-   1. Select `ES-DE AppImage`
-   1. Rename the application in Steam to `EmulationStation DE`
 
 ### Sunshine
 [Sunshine](https://github.com/LizardByte/Sunshine) Self-hosted game stream host for Moonlight.
@@ -353,7 +299,7 @@ sudo apt install --install-recommends wine-stable
    sudo udevadm trigger
    sudo modprobe uinput
    ```
-1. Configure autostart service
+1. Configure Sunshine service
    ```
    # ~/.config/systemd/user/sunshine.service
    [Unit]
@@ -369,9 +315,18 @@ sudo apt install --install-recommends wine-stable
    [Install]
    WantedBy=graphical-session.target
    ```
-1. Enable autostart
+1. Configure Sunshine to start on boot
    ```
    systemctl --user enable sunshine
+   ```
+1. Start Sunshine
+   ```
+   systemctl --user start sunshine
+   ```
+1. Configure Sunshine remote admin access
+   ```
+   # ~/.config/sunshine/sunshine.conf
+   origin_web_ui_allowed = wan
    ```
 1. `reboot`
 
@@ -410,6 +365,7 @@ Here are my applications I have setup.
       ```
       /home/sam/MoonDeck/MoonDeckBuddy.AppImage --exec MoonDeckStream
       ```
+   * Uncheck `Continue streaming if the application exits quickly`
 * Steam Big Picture - Similar to Desktop but launches Steam in Big Picture Mode
    * Do Command
       ```
@@ -431,20 +387,101 @@ My setup will differ from yours but run `xrandr` (Assuming you are using X11 as 
 
 [Moonlight Setup Guide](https://github.com/moonlight-stream/moonlight-docs/wiki/Setup-Guide)
 
+### Steam
+
+1. Download the Steam Debian package
+   ```
+   wget https://cdn.fastly.steamstatic.com/client/installer/steam.deb
+   ```
+1. Install Steam
+   ```
+   sudo apt install -y -f ./steam.deb
+   ```
+1. Launch Steam
+   ```
+   steam
+   ```
+1. Configure Steam to auto start on login
+1. Under _Storage_ add /mnt/games mount point and set it as the default
+1. Under _Compatibility_ enable `Enable Steam Play for all other titles`
+
+### Lutris
+[Lutris](https://lutris.net/) is an open gaming platform for Linux. Lutris helps you install and play video games from all eras and from most gaming systems.
+
+[Wine](https://www.winehq.org/) must be installed before you install Lutris
+```
+sudo dpkg --add-architecture i386
+sudo mkdir -pm755 /etc/apt/keyrings
+wget -O - https://dl.winehq.org/wine-builds/winehq.key | sudo gpg --dearmor -o /etc/apt/keyrings/winehq-archive.key -
+sudo wget -NP /etc/apt/sources.list.d/ https://dl.winehq.org/wine-builds/ubuntu/dists/noble/winehq-noble.sources
+sudo apt update
+sudo apt install -y --install-recommends wine-stable
+```
+
+1. Download the Lutris Debian package
+   ```
+   wget https://github.com/lutris/lutris/releases/download/v0.5.18/lutris_0.5.18_all.deb
+   ```
+1. Install Lutris
+   ```
+   sudo apt install -y -f ./lutris_0.5.18_all.deb
+   ```
+
+### EmuDeck
+[EmuDeck](https://emudeck.github.io/) is a collection of scripts that allows you to autoconfigure your Steam Deck (works on Linux too), it creates your roms directory structure and downloads all of the needed Emulators for you along with the best configurations for each of them. EmuDeck works great with Steam Rom Manager or with EmulationStation DE.
+
+1. Download prereqs
+   ```
+   sudo apt install -y bash flatpak git jq libfuse2 rsync unzip zenity
+   ```
+1. Install EmuDeck
+   ```
+   curl -L https://raw.githubusercontent.com/dragoonDorise/EmuDeck/main/install.sh | bash
+   ```
+1. Walk through initial setup
+1. Copy BIOS
+1. Copy ROMs
+1. Add Emulation Station to Steam
+   1. In Steam, go to `Games` menu
+   1. `Add a Non-Steam Game to My Library...`
+   1. Select `ES-DE AppImage`
+   1. Rename the application in Steam to `EmulationStation`
+
 ### MoonDeck
 [MoonDeck](https://github.com/FrogTheFrog/moondeck) is a plugin that makes it easier to manage your gamestream sessions from the Steam Deck and integrates with Sunshine. If you are wanting to stream games to your Steam Deck I highly recommend using this plugin.
 
 There are two components:
 
 * [MoonDeck](https://github.com/FrogTheFrog/moondeck) plugin which you install through [Ducky](https://github.com/SteamDeckHomebrew/decky-loader) on your Steam Deck
-* [MoonDeck Buddy](https://github.com/FrogTheFrog/moondeck-buddy) which you install on your streaming server and integrates with Sunshine. [Install Instructions](https://github.com/FrogTheFrog/moondeck-buddy/wiki/Buddy-installation-guide#linux-other-appimage)
+* [MoonDeck Buddy](https://github.com/FrogTheFrog/moondeck-buddy) which you install on your streaming server and integrates with Sunshine.
+
+_MoonDeck Buddy requires Steam to be installed first_
+
+1. Install MoonDeck Buddy Pre-reqs (FUSE)
+   ```
+   sudo add-apt-repository universe
+   sudo apt update
+   sudo apt install -y libfuse2t64
+   ```
+1. Download MoonDeck Buddy
+   ```
+   mkdir ~/MoonDeck
+   wget -O ~/MoonDeck/MoonDeckBuddy.AppImage https://github.com/FrogTheFrog/moondeck-buddy/releases/download/v1.6.2/MoonDeckBuddy-1.6.2-x86_64.AppImage
+   chmod +x ~/MoonDeck/MoonDeckBuddy.AppImage
+   ```
+1. Launch MoonDeck Buddy
+   ```
+   ~/MoonDeck/MoonDeckBuddy.AppImage
+   ```
+1. With MoonDeck Buddy running, look in your system tray for an Xbox controller icon, this indicates the service is running. If you right click the icon you can enable the service to _Start on system startup_
 
 ### xone
 [xone](https://github.com/medusalix/xone) is a Linux kernel driver for Xbox One and Xbox Series X|S accessories. Useful if you have an Xbox controller you want to hook up locally to your streaming server.
 ```
 mkdir ~/git
-cd git
+cd ~/git
 git clone https://github.com/medusalix/xone
+cd ~/git/xone
 sudo ./install.sh
 sudo xone-get-firmware.sh --skip-disclaimer
 ```
