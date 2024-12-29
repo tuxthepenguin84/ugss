@@ -283,13 +283,13 @@ sudo ./NVIDIA-Linux-x86_64-565.77.run
 ### Sunshine
 [Sunshine](https://github.com/LizardByte/Sunshine) Self-hosted game stream host for Moonlight.
 
-1. Grab the latest version of [Sunshine v2024.1227.43619](https://github.com/LizardByte/Sunshine/releases/download/v2024.1227.43619/sunshine-ubuntu-24.04-amd64.deb)
+1. Grab the [latest version](https://github.com/LizardByte/Sunshine/releases) of [Sunshine v2024.1227.43619](https://github.com/LizardByte/Sunshine/releases/download/v2024.1227.43619/sunshine-ubuntu-24.04-amd64.deb)
    ```
-   wget https://github.com/LizardByte/Sunshine/releases/download/v2024.1227.43619/sunshine-ubuntu-24.04-amd64.deb
+   wget -O ~/Downloads/sunshine.deb https://github.com/LizardByte/Sunshine/releases/download/v2024.1227.43619/sunshine-ubuntu-24.04-amd64.deb
    ```
 1. Install Sunshine
    ```
-   sudo apt install -y -f ./sunshine-ubuntu-24.04-amd64.deb
+   sudo apt install -y -f ~/Downloads/sunshine.deb
    ```
 1. Create and reload udev rules for uinput to create mouse and gamepad events:
    ```
@@ -418,13 +418,13 @@ sudo apt update
 sudo apt install -y --install-recommends wine-stable
 ```
 
-1. Download the Lutris Debian package
+1. Grab the [latest version](https://github.com/lutris/lutris/releases) of [Lutris 0.5.18](https://github.com/lutris/lutris/releases/download/v0.5.18/lutris_0.5.18_all.deb)
    ```
-   wget https://github.com/lutris/lutris/releases/download/v0.5.18/lutris_0.5.18_all.deb
+   wget -O ~/Downloads/lutris.deb https://github.com/lutris/lutris/releases/download/v0.5.18/lutris_0.5.18_all.deb
    ```
 1. Install Lutris
    ```
-   sudo apt install -y -f ./lutris_0.5.18_all.deb
+   sudo apt install -y -f ~/Downloads/lutris.deb
    ```
 
 ### EmuDeck
