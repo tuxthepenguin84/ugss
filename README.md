@@ -60,6 +60,9 @@
         <li><a href="#emudeck">EmuDeck</a></li>
         <li><a href="#moondeck">MoonDeck</a></li>
         <li><a href="#xone">xone</a></li>
+        <li><a href="#gamemode">GameMode</a></li>
+        <li><a href="#mangohud">MangoHud</a></li>
+        <li><a href="#goverlay">Goverlay</a></li>
       </ul>
     <li><a href="#additional-resources">Additional Resources</a></li>
     <li><a href="#other-considerations">Other Considerations</a></li>
@@ -485,6 +488,52 @@ cd ~/git/xone
 sudo ./install.sh
 sudo xone-get-firmware.sh --skip-disclaimer
 ```
+
+### GameMode
+[GameMode](https://github.com/FeralInteractive/gamemode) can optimise Linux system performance on demand.
+1. Install GameMode
+   ```
+   sudo apt install -y gamemode
+   ```
+1. At this point you can modify games to launch with GameMode by changing the Launch Options for a game in Steam
+   ```
+   gamemoderun %command%
+   ```
+   GameMode can be used with MangoHud
+   ```
+   gamemoderun mangohud %command%
+   ```
+
+### MangoHud
+[MangoHud](https://github.com/flightlessmango/MangoHud) A Vulkan and OpenGL overlay for monitoring FPS, temperatures, CPU/GPU load and more.
+1. Install MangoHud
+   ```
+   sudo apt install -y mangohud
+   ```
+1. Create a MangoHud config
+   ```
+   mkdir -p ~/.config/MangoHud/
+   wget -O ~/.config/MangoHud/MangoHud.conf https://raw.githubusercontent.com/flightlessmango/MangoHud/master/data/MangoHud.conf
+   ```
+1. At this point you can modify games to launch with MangoHud by changing the Launch Options for a game in Steam
+   ```
+   mangohud %command%
+   ```
+   MangoHud can be used with GameMode
+   ```
+   gamemoderun mangohud %command%
+   ```
+
+### Goverlay
+[Goverlay](https://github.com/benjamimgois/goverlay) is an opensource project that aims to create a Graphical UI to help manage Linux overlays. A GUI for managing MangoHud config.
+1. Install Goverlay
+   ```
+   sudo apt install -y goverlay
+   ```
+1. Launch Goverlay
+   ```
+   goverlay
+   ```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
