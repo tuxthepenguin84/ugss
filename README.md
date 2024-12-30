@@ -57,6 +57,7 @@
         <li><a href="#moonlight">Moonlight</a></li>
         <li><a href="#steam">Steam</a></li>
         <li><a href="#lutris">Lutris</a></li>
+        <li><a href="#heroic-game-launcher">Heroic Game Launcher</a></li>
         <li><a href="#emudeck">EmuDeck</a></li>
         <li><a href="#moondeck">MoonDeck</a></li>
         <li><a href="#xone">xone</a></li>
@@ -429,6 +430,26 @@ sudo apt install -y --install-recommends wine-stable
 1. Install Lutris
    ```
    sudo apt install -y -f ~/Downloads/lutris.deb
+   ```
+1. Launch Lutris
+   ```
+   lutris
+   ```
+
+### Heroic Game Launcher
+[Lutris](https://lutris.net/) is an open gaming platform for Linux. Lutris helps you install and play video games from all eras and from most gaming systems.
+
+1. Download the [latest version](https://github.com/Heroic-Games-Launcher/HeroicGamesLauncher/releases) of [Heroic 2.15.2](https://github.com/Heroic-Games-Launcher/HeroicGamesLauncher/releases/download/v2.15.2/heroic_2.15.2_amd64.deb)
+   ```
+   wget -O ~/Downloads/heroic.deb https://github.com/Heroic-Games-Launcher/HeroicGamesLauncher/releases/download/v2.15.2/heroic_2.15.2_amd64.deb
+   ```
+1. Install Heroic Game Launcher
+   ```
+   sudo apt install -y -f ~/Downloads/heroic.deb
+   ```
+1. Launch Heroic Game Launcher
+   ```
+   heroic
    ```
 
 ### EmuDeck
