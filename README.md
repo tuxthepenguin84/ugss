@@ -232,7 +232,7 @@ If you configured a secondary drive to store games
    sudo mkdir /mnt/games
 
    # Append to /etc/fstab
-   /dev/disk/by-uuid/<drive_uuid_here> /mnt/games ext4 noatime,nodiratime,nosuid,nodev,nofail,x-gvfs-show 0 0
+   /dev/disk/by-uuid/<drive_uuid_here> /mnt/games ext4 noatime,nodiratime,nosuid,nodev,nofail 0 0
 
    # Appears that systemd is tied into fstab now
    sudo systemctl daemon-reload
