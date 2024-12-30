@@ -51,15 +51,24 @@
         <li><a href="#configure-additional-drive">Configure Additional Drive</a></li>
         <li><a href="#configure-gpu">Configure GPU</a></li>
       </ul>
-    <li><a href="#additional-software">Additional Software</a></li>
+    <li><a href="#streaming-software">Streaming Software</a></li>
       <ul>
         <li><a href="#sunshine">Sunshine</a></li>
         <li><a href="#moonlight">Moonlight</a></li>
+        <li><a href="#moondeck">MoonDeck</a></li>
+      </ul>
+    <li><a href="#game-launchers">Game Launchers</a></li>
+      <ul>
         <li><a href="#steam">Steam</a></li>
         <li><a href="#lutris">Lutris</a></li>
         <li><a href="#heroic-game-launcher">Heroic Game Launcher</a></li>
+      </ul>
+    <li><a href="#emulation">Emulation</a></li>
+      <ul>
         <li><a href="#emudeck">EmuDeck</a></li>
-        <li><a href="#moondeck">MoonDeck</a></li>
+      </ul>
+    <li><a href="#utilities">Utilities</a></li>
+      <ul>
         <li><a href="#xone">xone</a></li>
         <li><a href="#gamemode">GameMode</a></li>
         <li><a href="#mangohud">MangoHud</a></li>
@@ -132,7 +141,7 @@ I got the idea for this when I tried using [Bazzite](https://github.com/ublue-os
 * [Sunshine](https://github.com/LizardByte/Sunshine/) - Backend streaming service
 * [Moonlight](https://moonlight-stream.org/) - Host client to connect to Sunshine
 
-All other <a href="#additional-software">additional software listed below</a> is optional but I imagine most people would be using Steam at a minimum.
+All other software listed below is optional but I imagine most people would be using Steam at a minimum.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -283,7 +292,7 @@ _Coming soon..._
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-## Additional Software
+## Streaming Software
 
 ### Sunshine
 [Sunshine](https://github.com/LizardByte/Sunshine) Self-hosted game stream host for Moonlight.
@@ -392,6 +401,38 @@ My setup will differ from yours but run `xrandr` (Assuming you are using X11 as 
 
 [Moonlight Setup Guide](https://github.com/moonlight-stream/moonlight-docs/wiki/Setup-Guide)
 
+### MoonDeck
+[MoonDeck](https://github.com/FrogTheFrog/moondeck) is a plugin that makes it easier to manage your gamestream sessions from the Steam Deck and integrates with Sunshine. If you are wanting to stream games to your Steam Deck I highly recommend using this plugin.
+
+There are two components:
+
+* [MoonDeck](https://github.com/FrogTheFrog/moondeck) plugin which you install through [Ducky](https://github.com/SteamDeckHomebrew/decky-loader) on your Steam Deck
+* [MoonDeck Buddy](https://github.com/FrogTheFrog/moondeck-buddy) which you install on your streaming server and integrates with Sunshine.
+
+_MoonDeck Buddy requires Steam to be installed first_
+
+1. Install MoonDeck Buddy Pre-reqs (FUSE)
+   ```
+   sudo add-apt-repository universe
+   sudo apt update
+   sudo apt install -y libfuse2t64
+   ```
+1. Download MoonDeck Buddy
+   ```
+   mkdir ~/MoonDeck
+   wget -O ~/MoonDeck/MoonDeckBuddy.AppImage https://github.com/FrogTheFrog/moondeck-buddy/releases/download/v1.6.2/MoonDeckBuddy-1.6.2-x86_64.AppImage
+   chmod +x ~/MoonDeck/MoonDeckBuddy.AppImage
+   ```
+1. Launch MoonDeck Buddy
+   ```
+   ~/MoonDeck/MoonDeckBuddy.AppImage
+   ```
+1. With MoonDeck Buddy running, look in your system tray for an Xbox controller icon, this indicates the service is running. If you right click the icon you can enable the service to _Start on system startup_
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## Game Launchers
+
 ### Steam
 
 1. Download the Steam Debian package
@@ -452,6 +493,10 @@ sudo apt install -y --install-recommends wine-stable
    heroic
    ```
 
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## Emulation
+
 ### EmuDeck
 [EmuDeck](https://emudeck.github.io/) is a collection of scripts that allows you to autoconfigure your Steam Deck (works on Linux too), it creates your roms directory structure and downloads all of the needed Emulators for you along with the best configurations for each of them. EmuDeck works great with Steam Rom Manager or with EmulationStation DE.
 
@@ -472,33 +517,9 @@ sudo apt install -y --install-recommends wine-stable
    1. Select `ES-DE AppImage`
    1. Rename the application in Steam to `EmulationStation`
 
-### MoonDeck
-[MoonDeck](https://github.com/FrogTheFrog/moondeck) is a plugin that makes it easier to manage your gamestream sessions from the Steam Deck and integrates with Sunshine. If you are wanting to stream games to your Steam Deck I highly recommend using this plugin.
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-There are two components:
-
-* [MoonDeck](https://github.com/FrogTheFrog/moondeck) plugin which you install through [Ducky](https://github.com/SteamDeckHomebrew/decky-loader) on your Steam Deck
-* [MoonDeck Buddy](https://github.com/FrogTheFrog/moondeck-buddy) which you install on your streaming server and integrates with Sunshine.
-
-_MoonDeck Buddy requires Steam to be installed first_
-
-1. Install MoonDeck Buddy Pre-reqs (FUSE)
-   ```
-   sudo add-apt-repository universe
-   sudo apt update
-   sudo apt install -y libfuse2t64
-   ```
-1. Download MoonDeck Buddy
-   ```
-   mkdir ~/MoonDeck
-   wget -O ~/MoonDeck/MoonDeckBuddy.AppImage https://github.com/FrogTheFrog/moondeck-buddy/releases/download/v1.6.2/MoonDeckBuddy-1.6.2-x86_64.AppImage
-   chmod +x ~/MoonDeck/MoonDeckBuddy.AppImage
-   ```
-1. Launch MoonDeck Buddy
-   ```
-   ~/MoonDeck/MoonDeckBuddy.AppImage
-   ```
-1. With MoonDeck Buddy running, look in your system tray for an Xbox controller icon, this indicates the service is running. If you right click the icon you can enable the service to _Start on system startup_
+## Utilities
 
 ### xone
 [xone](https://github.com/medusalix/xone) is a Linux kernel driver for Xbox One and Xbox Series X|S accessories. Useful if you have an Xbox controller you want to hook up locally to your streaming server.
