@@ -261,12 +261,12 @@ _Coming soon..._
 
 #### Nvidia
 
-Grab the latest drivers [Nvidia 3060 - 565.77](https://us.download.nvidia.com/XFree86/Linux-x86_64/565.77/NVIDIA-Linux-x86_64-565.77.run) latest at the time of writing this
-```
-wget https://us.download.nvidia.com/XFree86/Linux-x86_64/565.77/NVIDIA-Linux-x86_64-565.77.run
-chmod +x NVIDIA-Linux-x86_64-565.77.run
-sudo ./NVIDIA-Linux-x86_64-565.77.run
-```
+1. Download the latest version of [Nvidia 3060 - 565.77](https://us.download.nvidia.com/XFree86/Linux-x86_64/565.77/NVIDIA-Linux-x86_64-565.77.run)
+   ```
+   wget https://us.download.nvidia.com/XFree86/Linux-x86_64/565.77/NVIDIA-Linux-x86_64-565.77.run
+   chmod +x NVIDIA-Linux-x86_64-565.77.run
+   sudo ./NVIDIA-Linux-x86_64-565.77.run
+   ```
 1. Multiple kernel module types are available for this system. Which would you like to use? `MIT/GPL`
 1. An alternate method of installing the NVIDIA driver was detected. `Continue installation`
 1. The Nouveau kernel driver is currently in use by your system.  This driver is incompatible with the NVIDIA driver, and must be disabled before proceeding.
@@ -287,7 +287,7 @@ sudo ./NVIDIA-Linux-x86_64-565.77.run
 ### Sunshine
 [Sunshine](https://github.com/LizardByte/Sunshine) Self-hosted game stream host for Moonlight.
 
-1. Grab the [latest version](https://github.com/LizardByte/Sunshine/releases) of [Sunshine v2024.1227.43619](https://github.com/LizardByte/Sunshine/releases/download/v2024.1227.43619/sunshine-ubuntu-24.04-amd64.deb)
+1. Download the [latest version](https://github.com/LizardByte/Sunshine/releases) of [Sunshine v2024.1227.43619](https://github.com/LizardByte/Sunshine/releases/download/v2024.1227.43619/sunshine-ubuntu-24.04-amd64.deb)
    ```
    wget -O ~/Downloads/sunshine.deb https://github.com/LizardByte/Sunshine/releases/download/v2024.1227.43619/sunshine-ubuntu-24.04-amd64.deb
    ```
@@ -422,7 +422,7 @@ sudo apt update
 sudo apt install -y --install-recommends wine-stable
 ```
 
-1. Grab the [latest version](https://github.com/lutris/lutris/releases) of [Lutris 0.5.18](https://github.com/lutris/lutris/releases/download/v0.5.18/lutris_0.5.18_all.deb)
+1. Download the [latest version](https://github.com/lutris/lutris/releases) of [Lutris 0.5.18](https://github.com/lutris/lutris/releases/download/v0.5.18/lutris_0.5.18_all.deb)
    ```
    wget -O ~/Downloads/lutris.deb https://github.com/lutris/lutris/releases/download/v0.5.18/lutris_0.5.18_all.deb
    ```
@@ -538,7 +538,7 @@ sudo xone-get-firmware.sh --skip-disclaimer
 
 ### ProtonUp-QT
 [ProtonUp-QT](https://github.com/DavidoTek/ProtonUp-Qt) install and manage GE-Proton, Luxtorpeda & more for Steam and Wine-GE & more for Lutris with this graphical user interface.
-1. Download ProtonUp-QT
+1. Download the [latest version](https://github.com/DavidoTek/ProtonUp-Qt/releases) of [ProtonUp-Qt-2.10.2](https://github.com/DavidoTek/ProtonUp-Qt/releases/download/v2.10.2/ProtonUp-Qt-2.10.2-x86_64.AppImage)
    ```
    mkdir ~/ProtonUp-QT
    wget -O ~/ProtonUp-QT/ProtonUp-QT.AppImage https://github.com/DavidoTek/ProtonUp-Qt/releases/download/v2.10.2/ProtonUp-Qt-2.10.2-x86_64.AppImage
