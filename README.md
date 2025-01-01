@@ -297,9 +297,9 @@ _Coming soon..._
 ### Sunshine
 [Sunshine](https://github.com/LizardByte/Sunshine) Self-hosted game stream host for Moonlight.
 
-1. Download the [latest version](https://github.com/LizardByte/Sunshine/releases) of [Sunshine v2024.1227.43619](https://github.com/LizardByte/Sunshine/releases/download/v2024.1227.43619/sunshine-ubuntu-24.04-amd64.deb)
+1. Download the [latest version](https://github.com/LizardByte/Sunshine/releases) of [Sunshine v2024.1230.200248](https://github.com/LizardByte/Sunshine/releases/download/v2024.1230.200248/sunshine-ubuntu-24.04-amd64.deb)
    ```
-   wget -O ~/Downloads/sunshine.deb https://github.com/LizardByte/Sunshine/releases/download/v2024.1227.43619/sunshine-ubuntu-24.04-amd64.deb
+   wget -O ~/Downloads/sunshine.deb https://github.com/LizardByte/Sunshine/releases/download/v2024.1230.200248/sunshine-ubuntu-24.04-amd64.deb
    ```
 1. Install Sunshine
    ```
