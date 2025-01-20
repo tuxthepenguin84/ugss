@@ -112,6 +112,8 @@ Once complete you should be able to stream games to just about any device:
 
 I got the idea for this when I tried using [Bazzite](https://github.com/ublue-os/bazzite) but ran into issues with Wayland on Nvidia and Fedora Atomic Desktops. Once I figured out the major components of what all was needed I decided I'd try to roll my own configuration on Ubuntu.
 
+One of the key benefits of a game streaming server is that it allows you to centralize processing power in one place. This enables you to use smaller, more energy-efficient devices throughout your home to stream games to, rather than relying on powerful hardware at each location. For instance, streaming games to a Steam Deck can extend playtime by over twice as long (5+ hours) at higher quality compared to playing locally.
+
 ### Screenshots
 
 [![Product Screen Shot 1][product-screenshot-1]](https://github.com/tuxthepenguin84/ugss/blob/master/images/screenshot1.png)
