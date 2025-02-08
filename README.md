@@ -17,7 +17,7 @@
   <h3 align="center">Ultimate Game Streaming Server</h3>
 
   <p align="center">
-    How to build the Ultimate Game Streaming Server
+    Build the Ultimate Game Streaming Server
     <br />
     <a href="https://github.com/tuxthepenguin84/ugss"><strong>Explore the docs »</strong></a>
     <br />
