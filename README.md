@@ -672,15 +672,15 @@ Project Link: [https://github.com/tuxthepenguin84/ugss](https://github.com/tuxth
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[contributors-shield]: https://img.shields.io/github/contributors/othneildrew/Best-README-Template.svg?style=for-the-badge
+[contributors-shield]: https://img.shields.io/github/contributors/tuxthepenguin84/ugss.svg?style=for-the-badge
 [contributors-url]: https://github.com/tuxthepenguin84/ugss/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/othneildrew/Best-README-Template.svg?style=for-the-badge
+[forks-shield]: https://img.shields.io/github/forks/tuxthepenguin84/ugss.svg?style=for-the-badge
 [forks-url]: https://github.com/tuxthepenguin84/ugss/network/members
-[stars-shield]: https://img.shields.io/github/stars/othneildrew/Best-README-Template.svg?style=for-the-badge
+[stars-shield]: https://img.shields.io/github/stars/tuxthepenguin84/ugss.svg?style=for-the-badge
 [stars-url]: https://github.com/tuxthepenguin84/ugss/stargazers
-[issues-shield]: https://img.shields.io/github/issues/othneildrew/Best-README-Template.svg?style=for-the-badge
+[issues-shield]: https://img.shields.io/github/issues/tuxthepenguin84/ugss.svg?style=for-the-badge
 [issues-url]: https://github.com/tuxthepenguin84/ugss/issues
-[license-shield]: https://img.shields.io/github/license/othneildrew/Best-README-Template.svg?style=for-the-badge
+[license-shield]: https://img.shields.io/github/license/tuxthepenguin84/ugss.svg?style=for-the-badge
 [license-url]: https://github.com/tuxthepenguin84/ugss/blob/master/LICENSE.txt
 [product-screenshot-1]: images/screenshot1.png
 [product-screenshot-2]: images/screenshot2.png
