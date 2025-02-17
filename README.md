@@ -524,11 +524,11 @@ sudo apt install -y --install-recommends wine-stable
 ## Utilities
 
 ### xone
-[xone](https://github.com/medusalix/xone) is a Linux kernel driver for Xbox One and Xbox Series X|S accessories. Useful if you have an Xbox controller you want to hook up locally to your streaming server.
+[xone](https://github.com/dlundqvist/xone) is a Linux kernel driver for Xbox One and Xbox Series X|S accessories. Useful if you have an Xbox controller you want to hook up locally to your streaming server.
 ```
 mkdir ~/git
 cd ~/git
-git clone https://github.com/medusalix/xone
+git clone https://github.com/dlundqvist/xone
 cd ~/git/xone
 sudo ./install.sh
 sudo xone-get-firmware.sh --skip-disclaimer
