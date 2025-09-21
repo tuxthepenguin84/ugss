@@ -71,6 +71,7 @@
         <li><a href="#gamemode">GameMode</a></li>
         <li><a href="#mangohud">MangoHud</a></li>
         <li><a href="#goverlay">Goverlay</a></li>
+        <li><a href="#proton-ge-custom">Proton-GE-Custom</a></li>
         <li><a href="#protonup-qt">ProtonUp-QT</a></li>
       </ul>
     <li><a href="#additional-resources">Additional Resources</a></li>
@@ -277,11 +278,11 @@ _Coming soon..._
 
 #### Nvidia
 
-1. Download the latest version of [Nvidia 3060 - 570.169](https://us.download.nvidia.com/XFree86/Linux-x86_64/570.169/NVIDIA-Linux-x86_64-570.169.run)
+1. Download the latest version of [Nvidia 3060 - 580.82.09](https://us.download.nvidia.com/XFree86/Linux-x86_64/580.82.09/NVIDIA-Linux-x86_64-580.82.09.run)
    ```
-   wget https://us.download.nvidia.com/XFree86/Linux-x86_64/570.169/NVIDIA-Linux-x86_64-570.169.run
-   chmod +x NVIDIA-Linux-x86_64-570.169.run
-   sudo ./NVIDIA-Linux-x86_64-570.169.run
+   wget https://us.download.nvidia.com/XFree86/Linux-x86_64/580.82.09/NVIDIA-Linux-x86_64-580.82.09.run
+   chmod +x NVIDIA-Linux-x86_64-580.82.09.run
+   sudo ./NVIDIA-Linux-x86_64-580.82.09.run
    ```
 1. Multiple kernel module types are available for this system. Which would you like to use? `MIT/GPL`
 1. An alternate method of installing the NVIDIA driver was detected. `Continue installation`
@@ -304,9 +305,9 @@ _Coming soon..._
 
 [Sunshine](https://github.com/LizardByte/Sunshine) Self-hosted game stream host for Moonlight.
 
-1. Download the [latest version](https://github.com/LizardByte/Sunshine/releases) of [Sunshine v2025.122.141614](https://github.com/LizardByte/Sunshine/releases/download/v2025.122.141614/sunshine-ubuntu-24.04-amd64.deb)
+1. Download the [latest version](https://github.com/LizardByte/Sunshine/releases) of [Sunshine v2025.921.132422](https://github.com/LizardByte/Sunshine/releases/download/v2025.921.132422/sunshine-ubuntu-24.04-amd64.deb)
    ```
-   wget -O ~/Downloads/sunshine.deb https://github.com/LizardByte/Sunshine/releases/download/v2025.122.141614/sunshine-ubuntu-24.04-amd64.deb
+   wget -O ~/Downloads/sunshine.deb https://github.com/LizardByte/Sunshine/releases/download/v2025.921.132422/sunshine-ubuntu-24.04-amd64.deb
    ```
 1. Install Sunshine
    ```
@@ -601,14 +602,54 @@ sudo xone-get-firmware.sh --skip-disclaimer
    goverlay
    ```
 
+### Proton-GE-Custom
+[Proton-GE-Custom](https://github.com/GloriousEggroll/proton-ge-custom) - Compatibility tool for Steam Play based on Wine and additional components
+```
+# make temp working directory
+echo "Creating temporary working directory..."
+rm -rf /tmp/proton-ge-custom
+mkdir /tmp/proton-ge-custom
+cd /tmp/proton-ge-custom
+
+# download tarball
+echo "Fetching tarball URL..."
+tarball_url=$(curl -s https://api.github.com/repos/GloriousEggroll/proton-ge-custom/releases/latest | grep browser_download_url | cut -d\" -f4 | grep .tar.gz)
+tarball_name=$(basename $tarball_url)
+echo "Downloading tarball: $tarball_name..."
+curl -# -L $tarball_url -o $tarball_name --no-progress-meter
+
+# download checksum
+echo "Fetching checksum URL..."
+checksum_url=$(curl -s https://api.github.com/repos/GloriousEggroll/proton-ge-custom/releases/latest | grep browser_download_url | cut -d\" -f4 | grep .sha512sum)
+checksum_name=$(basename $checksum_url)
+echo "Downloading checksum: $checksum_name..."
+curl -# -L $checksum_url -o $checksum_name --no-progress-meter
+
+# check tarball with checksum
+echo "Verifying tarball $tarball_name with checksum $checksum_name..."
+sha512sum -c $checksum_name
+# if result is ok, continue
+
+# make steam directory if it does not exist
+echo "Creating Steam directory if it does not exist..."
+mkdir -p ~/.steam/steam/compatibilitytools.d
+
+# extract proton tarball to steam directory
+echo "Extracting $tarball_name to Steam directory..."
+tar -xf $tarball_name -C ~/.steam/steam/compatibilitytools.d/
+echo "All done :)"
+```
+
+You now have the latest ProtonGE available in Steam Compatibility
+
 ### ProtonUp-QT
 
 [ProtonUp-QT](https://github.com/DavidoTek/ProtonUp-Qt) install and manage GE-Proton, Luxtorpeda & more for Steam and Wine-GE & more for Lutris with this graphical user interface.
 
-1. Download the [latest version](https://github.com/DavidoTek/ProtonUp-Qt/releases) of [ProtonUp-Qt-2.10.2](https://github.com/DavidoTek/ProtonUp-Qt/releases/download/v2.10.2/ProtonUp-Qt-2.10.2-x86_64.AppImage)
+1. Download the [latest version](https://github.com/DavidoTek/ProtonUp-Qt/releases) of [ProtonUp-Qt-2.13.0](https://github.com/DavidoTek/ProtonUp-Qt/releases/download/v2.13.0/ProtonUp-Qt-2.13.0-x86_64.AppImage)
    ```
    mkdir ~/ProtonUp-QT
-   wget -O ~/ProtonUp-QT/ProtonUp-QT.AppImage https://github.com/DavidoTek/ProtonUp-Qt/releases/download/v2.10.2/ProtonUp-Qt-2.10.2-x86_64.AppImage
+   wget -O ~/ProtonUp-QT/ProtonUp-QT.AppImage https://github.com/DavidoTek/ProtonUp-Qt/releases/download/v2.13.0/ProtonUp-Qt-2.13.0-x86_64.AppImage
    chmod +x ~/ProtonUp-QT/ProtonUp-QT.AppImage
    ```
 1. Run ProtonUp-QT
