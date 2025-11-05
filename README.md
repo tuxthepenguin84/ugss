@@ -278,11 +278,11 @@ _Coming soon..._
 
 #### Nvidia
 
-1. Download the latest version of [Nvidia 3060 - 580.82.09](https://us.download.nvidia.com/XFree86/Linux-x86_64/580.82.09/NVIDIA-Linux-x86_64-580.82.09.run)
+1. Download the latest version of [Nvidia 3060 - 580.105.08](https://us.download.nvidia.com/XFree86/Linux-x86_64/580.105.08/NVIDIA-Linux-x86_64-580.105.08.run)
    ```
-   wget https://us.download.nvidia.com/XFree86/Linux-x86_64/580.82.09/NVIDIA-Linux-x86_64-580.82.09.run
-   chmod +x NVIDIA-Linux-x86_64-580.82.09.run
-   sudo ./NVIDIA-Linux-x86_64-580.82.09.run
+   wget https://us.download.nvidia.com/XFree86/Linux-x86_64/580.105.08/NVIDIA-Linux-x86_64-580.105.08.run
+   chmod +x NVIDIA-Linux-x86_64-580.105.08.run
+   sudo ./NVIDIA-Linux-x86_64-580.105.08.run
    ```
 1. Multiple kernel module types are available for this system. Which would you like to use? `MIT/GPL`
 1. An alternate method of installing the NVIDIA driver was detected. `Continue installation`
@@ -305,9 +305,9 @@ _Coming soon..._
 
 [Sunshine](https://github.com/LizardByte/Sunshine) Self-hosted game stream host for Moonlight.
 
-1. Download the [latest version](https://github.com/LizardByte/Sunshine/releases) of [Sunshine v2025.921.132422](https://github.com/LizardByte/Sunshine/releases/download/v2025.921.132422/sunshine-ubuntu-24.04-amd64.deb)
+1. Download the [latest version](https://github.com/LizardByte/Sunshine/releases) of [Sunshine v2025.1027.181930](https://github.com/LizardByte/Sunshine/releases/download/v2025.1027.181930/sunshine-ubuntu-24.04-amd64.deb)
    ```
-   wget -O ~/Downloads/sunshine.deb https://github.com/LizardByte/Sunshine/releases/download/v2025.921.132422/sunshine-ubuntu-24.04-amd64.deb
+   wget -O ~/Downloads/sunshine.deb https://github.com/LizardByte/Sunshine/releases/download/v2025.1027.181930/sunshine-ubuntu-24.04-amd64.deb
    ```
 1. Install Sunshine
    ```
