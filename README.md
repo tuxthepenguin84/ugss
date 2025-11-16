@@ -71,7 +71,6 @@
         <li><a href="#gamemode">GameMode</a></li>
         <li><a href="#mangohud">MangoHud</a></li>
         <li><a href="#goverlay">Goverlay</a></li>
-        <li><a href="#proton-ge-custom">Proton-GE-Custom</a></li>
         <li><a href="#protonup-qt">ProtonUp-QT</a></li>
       </ul>
     <li><a href="#additional-resources">Additional Resources</a></li>
@@ -432,7 +431,7 @@ _MoonDeck Buddy requires Steam to be installed first_
 1. Download MoonDeck Buddy
    ```
    mkdir ~/MoonDeck
-   wget -O ~/MoonDeck/MoonDeckBuddy.AppImage https://github.com/FrogTheFrog/moondeck-buddy/releases/download/v1.6.2/MoonDeckBuddy-1.6.2-x86_64.AppImage
+   wget -O ~/MoonDeck/MoonDeckBuddy.AppImage https://github.com/FrogTheFrog/moondeck-buddy/releases/download/v1.9.1/MoonDeckBuddy-1.9.1-x86_64.AppImage
    chmod +x ~/MoonDeck/MoonDeckBuddy.AppImage
    ```
 1. Launch MoonDeck Buddy
@@ -495,9 +494,9 @@ sudo apt install -y --install-recommends wine-stable
 
 [Lutris](https://lutris.net/) is an open gaming platform for Linux. Lutris helps you install and play video games from all eras and from most gaming systems.
 
-1. Download the [latest version](https://github.com/Heroic-Games-Launcher/HeroicGamesLauncher/releases) of [Heroic 2.15.2](https://github.com/Heroic-Games-Launcher/HeroicGamesLauncher/releases/download/v2.15.2/heroic_2.15.2_amd64.deb)
+1. Download the [latest version](https://github.com/Heroic-Games-Launcher/HeroicGamesLauncher/releases) of [Heroic 2.18.1](https://github.com/Heroic-Games-Launcher/HeroicGamesLauncher/releases/download/v2.18.1/Heroic-2.18.1-linux-amd64.deb)
    ```
-   wget -O ~/Downloads/heroic.deb https://github.com/Heroic-Games-Launcher/HeroicGamesLauncher/releases/download/v2.15.2/heroic_2.15.2_amd64.deb
+   wget -O ~/Downloads/heroic.deb https://github.com/Heroic-Games-Launcher/HeroicGamesLauncher/releases/download/v2.18.1/Heroic-2.18.1-linux-amd64.deb
    ```
 1. Install Heroic Game Launcher
    ```
@@ -602,54 +601,14 @@ sudo xone-get-firmware.sh --skip-disclaimer
    goverlay
    ```
 
-### Proton-GE-Custom
-[Proton-GE-Custom](https://github.com/GloriousEggroll/proton-ge-custom) - Compatibility tool for Steam Play based on Wine and additional components
-```
-# make temp working directory
-echo "Creating temporary working directory..."
-rm -rf /tmp/proton-ge-custom
-mkdir /tmp/proton-ge-custom
-cd /tmp/proton-ge-custom
-
-# download tarball
-echo "Fetching tarball URL..."
-tarball_url=$(curl -s https://api.github.com/repos/GloriousEggroll/proton-ge-custom/releases/latest | grep browser_download_url | cut -d\" -f4 | grep .tar.gz)
-tarball_name=$(basename $tarball_url)
-echo "Downloading tarball: $tarball_name..."
-curl -# -L $tarball_url -o $tarball_name --no-progress-meter
-
-# download checksum
-echo "Fetching checksum URL..."
-checksum_url=$(curl -s https://api.github.com/repos/GloriousEggroll/proton-ge-custom/releases/latest | grep browser_download_url | cut -d\" -f4 | grep .sha512sum)
-checksum_name=$(basename $checksum_url)
-echo "Downloading checksum: $checksum_name..."
-curl -# -L $checksum_url -o $checksum_name --no-progress-meter
-
-# check tarball with checksum
-echo "Verifying tarball $tarball_name with checksum $checksum_name..."
-sha512sum -c $checksum_name
-# if result is ok, continue
-
-# make steam directory if it does not exist
-echo "Creating Steam directory if it does not exist..."
-mkdir -p ~/.steam/steam/compatibilitytools.d
-
-# extract proton tarball to steam directory
-echo "Extracting $tarball_name to Steam directory..."
-tar -xf $tarball_name -C ~/.steam/steam/compatibilitytools.d/
-echo "All done :)"
-```
-
-You now have the latest ProtonGE available in Steam Compatibility
-
 ### ProtonUp-QT
 
 [ProtonUp-QT](https://github.com/DavidoTek/ProtonUp-Qt) install and manage GE-Proton, Luxtorpeda & more for Steam and Wine-GE & more for Lutris with this graphical user interface.
 
-1. Download the [latest version](https://github.com/DavidoTek/ProtonUp-Qt/releases) of [ProtonUp-Qt-2.13.0](https://github.com/DavidoTek/ProtonUp-Qt/releases/download/v2.13.0/ProtonUp-Qt-2.13.0-x86_64.AppImage)
+1. Download the [latest version](https://github.com/DavidoTek/ProtonUp-Qt/releases) of [ProtonUp-Qt-2.14.0](https://github.com/DavidoTek/ProtonUp-Qt/releases/download/v2.14.0/ProtonUp-Qt-2.14.0-x86_64.AppImage)
    ```
    mkdir ~/ProtonUp-QT
-   wget -O ~/ProtonUp-QT/ProtonUp-QT.AppImage https://github.com/DavidoTek/ProtonUp-Qt/releases/download/v2.13.0/ProtonUp-Qt-2.13.0-x86_64.AppImage
+   wget -O ~/ProtonUp-QT/ProtonUp-QT.AppImage https://github.com/DavidoTek/ProtonUp-Qt/releases/download/v2.14.0/ProtonUp-Qt-2.14.0-x86_64.AppImage
    chmod +x ~/ProtonUp-QT/ProtonUp-QT.AppImage
    ```
 1. Run ProtonUp-QT
