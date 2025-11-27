@@ -545,8 +545,8 @@ mkdir ~/git
 cd ~/git
 git clone https://github.com/dlundqvist/xone
 cd ~/git/xone
-sudo ./install.sh
-sudo xone-get-firmware.sh --skip-disclaimer
+sudo make install
+sudo install/firmware.sh
 ```
 
 ### GameMode
